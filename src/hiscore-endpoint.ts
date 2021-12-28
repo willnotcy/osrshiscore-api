@@ -3,12 +3,12 @@
 
 export enum HiscoreEndpointType {
     Normal = 0,
-    Ironman = 2,
-    HardcoreIronman = 3,
-    UltimateIronman = 4,
-    Deadman = 5,
-    League = 6,
-    Tournament = 7,
+    Ironman = 1,
+    HardcoreIronman = 2,
+    UltimateIronman = 3,
+    Deadman = 4,
+    League = 5,
+    Tournament = 6,
 }
 
 // Map from hiscore entry type to hiscore endpoint url

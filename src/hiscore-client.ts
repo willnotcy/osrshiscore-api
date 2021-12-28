@@ -2,35 +2,36 @@
 // function  processResponse player name and response returns HiscoreResult
 // function  parseResponse player name and response returns HiscoreResult
 
-import { Response } from "node-fetch";
+import { AxiosResponse } from "axios";
 import { HiscoreEndpointType, HiscoreEndpointUrlMap } from "./hiscore-endpoint";
 import { HiscoreEntryTypeMap } from "./hiscore-entry";
 import { HiscoreResult } from "./hiscore-result";
 import { HiscoreResultBuilder } from "./hiscore-result-builder";
 import { ResultEntry } from "./result-entry";
-const fetch = require("node-fetch");
+const axios = require('axios').default;
 
 export class HiscoreClient {
     // Lookup  playerName, endpointType) : HiscoreResult
     // get endpoint url from endpointType + ?player=playerName
-    // fetch endpoint url
+    // axios endpoint url
     // process response
     public static async Lookup(playerName: string, endpointType: HiscoreEndpointType): Promise<HiscoreResult> {
         const endpointUrl = HiscoreClient.GetEndpointUrl(endpointType);
         const url = endpointUrl + "?player=" + playerName;
-        const response = fetch(url).then((res: Response) => res);
-        return await HiscoreClient.ProcessResponse(playerName, response);
+        const response = axios(url).then((res: AxiosResponse) => res);
+        return await HiscoreClient.ProcessResponse(playerName, await response);
     }
 
     // processResponse(playerName, response) : HiscoreResult
-    // if not response.ok
+    // if not status 200
     // throw error with response.statusText
     // return parse response
-    public static async ProcessResponse(playerName: string, response: Response): Promise<HiscoreResult> {
-        if (!response.ok) {
+    public static async ProcessResponse(playerName: string, response: AxiosResponse): Promise<HiscoreResult> {
+        if (!(response.status === 200)) {
+            console.log(response)
             throw new Error(response.statusText);
         }
-        const responseText = await response.text();
+        const responseText = await response.data;
         return HiscoreClient.ParseResponse(playerName, responseText);
     }
        

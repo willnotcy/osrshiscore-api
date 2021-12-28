@@ -81,9 +81,6 @@ export class HiscoreResultBuilder {
         result.setHunter(this._entries[count++]);
         result.setConstruction(this._entries[count++]);
 
-        result.setLastManStanding(this._entries[count++]);
-        result.setSoulWarsZeal(this._entries[count++]);
-
         result.setLeaguePoints(this._entries[count++]);
         result.setBountyHunterHunter(this._entries[count++]);
         result.setBountyHunterRogue(this._entries[count++]);
@@ -94,6 +91,9 @@ export class HiscoreResultBuilder {
         result.setClueScrollHard(this._entries[count++]);
         result.setClueScrollElite(this._entries[count++]);
         result.setClueScrollMaster(this._entries[count++]);
+        result.setLastManStanding(this._entries[count++]);
+        result.setSoulWarsZeal(this._entries[count++]);
+
         result.setAbyssalSire(this._entries[count++]);
         result.setAlchemicalHydra(this._entries[count++]);
         result.setBarrowsBrothers(this._entries[count++]);
@@ -130,7 +130,9 @@ export class HiscoreResultBuilder {
         result.setPhosanisNightmare(this._entries[count++]);
         result.setObor(this._entries[count++]);
         result.setSarachnis(this._entries[count++]);
+        result.setScorpia(this._entries[count++]);
         result.setSkotizo(this._entries[count++]);
+        result.setTempoross(this._entries[count++]);
         result.setTheGauntlet(this._entries[count++]);
         result.setTheCorruptedGauntlet(this._entries[count++]);
         result.setTheatreOfBlood(this._entries[count++]);
