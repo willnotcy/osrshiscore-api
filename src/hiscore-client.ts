@@ -26,7 +26,7 @@ export class HiscoreClient {
     // if not status 200
     // throw error with response.statusText
     // return parse response
-    public static async ProcessResponse(playerName: string, response: AxiosResponse): Promise<HiscoreResult> {
+    private static async ProcessResponse(playerName: string, response: AxiosResponse): Promise<HiscoreResult> {
         if (!(response.status === 200)) {
             console.log(response)
             throw new Error(response.statusText);
@@ -45,7 +45,7 @@ export class HiscoreClient {
     // create new HiscoreEntry with rank, level, xp
     // add HiscoreEntry to HiscoreResultBuilder
     // return HiscoreResultBuilder.Build()
-    public static ParseResponse(playerName: string, response: string): HiscoreResult {
+    private static ParseResponse(playerName: string, response: string): HiscoreResult {
         const builder = new HiscoreResultBuilder(playerName);
         let count = 0;
         response
