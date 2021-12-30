@@ -83,11 +83,12 @@
 // ResultEntry zalcano
 // ResultEntry zulrah
 
+import { HiscoreEndpointType } from "./hiscore-endpoint";
 import { ResultEntry } from "./result-entry";
+const UndefinedResultEntry = new ResultEntry(-1, -1, -1);
 
 export class HiscoreResult {
-    private UndefinedResultEntry = new ResultEntry(-1, -1, -1);
-
+    private gamemode: HiscoreEndpointType;
     private playerName: string;
     private overall: ResultEntry;
     private attack: ResultEntry;
@@ -176,92 +177,108 @@ export class HiscoreResult {
 
     constructor () {
         this.playerName = '';
-        this.overall = this.UndefinedResultEntry;
-        this.attack = this.UndefinedResultEntry;
-        this.defence = this.UndefinedResultEntry;
-        this.strength = this.UndefinedResultEntry;
-        this.hitpoints = this.UndefinedResultEntry;
-        this.ranged = this.UndefinedResultEntry;
-        this.prayer = this.UndefinedResultEntry;
-        this.magic = this.UndefinedResultEntry;
-        this.cooking = this.UndefinedResultEntry;
-        this.woodcutting = this.UndefinedResultEntry;
-        this.fletching = this.UndefinedResultEntry;
-        this.fishing = this.UndefinedResultEntry;
-        this.firemaking = this.UndefinedResultEntry;
-        this.crafting = this.UndefinedResultEntry;
-        this.smithing = this.UndefinedResultEntry;
-        this.mining = this.UndefinedResultEntry;
-        this.herblore = this.UndefinedResultEntry;
-        this.agility = this.UndefinedResultEntry;
-        this.thieving = this.UndefinedResultEntry;
-        this.slayer = this.UndefinedResultEntry;
-        this.farming = this.UndefinedResultEntry;
-        this.runecraft = this.UndefinedResultEntry;
-        this.hunter = this.UndefinedResultEntry;
-        this.construction = this.UndefinedResultEntry;
-        this.leaguePoints = this.UndefinedResultEntry;
-        this.bountyHunterHunter = this.UndefinedResultEntry;
-        this.bountyHunterRogue = this.UndefinedResultEntry;
-        this.clueScrollAll = this.UndefinedResultEntry;
-        this.clueScrollBeginner = this.UndefinedResultEntry;
-        this.clueScrollEasy = this.UndefinedResultEntry;
-        this.clueScrollMedium = this.UndefinedResultEntry;
-        this.clueScrollHard = this.UndefinedResultEntry;
-        this.clueScrollElite = this.UndefinedResultEntry;
-        this.clueScrollMaster = this.UndefinedResultEntry;
-        this.lastManStanding = this.UndefinedResultEntry;
-        this.soulWarsZeal = this.UndefinedResultEntry;
-        this.abyssalSire = this.UndefinedResultEntry;
-        this.alchemicalHydra = this.UndefinedResultEntry;
-        this.barrowsBrothers = this.UndefinedResultEntry;
-        this.bryophyta = this.UndefinedResultEntry;
-        this.callisto = this.UndefinedResultEntry;
-        this.cerberus = this.UndefinedResultEntry;
-        this.chambersOfXeric = this.UndefinedResultEntry;
-        this.chambersOfXericChallengeMode = this.UndefinedResultEntry;
-        this.chaosElemental = this.UndefinedResultEntry;
-        this.chaosFanatic = this.UndefinedResultEntry;
-        this.commanderZilyana = this.UndefinedResultEntry;
-        this.corporealBeast = this.UndefinedResultEntry;
-        this.crazyArchaeologist = this.UndefinedResultEntry;
-        this.dagannothPrime = this.UndefinedResultEntry;
-        this.dagannothRex = this.UndefinedResultEntry;
-        this.dagannothSupreme = this.UndefinedResultEntry;
-        this.derangedArchaeologist = this.UndefinedResultEntry;
-        this.generalGraardor = this.UndefinedResultEntry;
-        this.giantMole = this.UndefinedResultEntry;
-        this.grotesqueGuardians = this.UndefinedResultEntry;
-        this.hespori = this.UndefinedResultEntry;
-        this.kalphiteQueen = this.UndefinedResultEntry;
-        this.kingBlackDragon = this.UndefinedResultEntry;
-        this.kraken = this.UndefinedResultEntry;
-        this.kreeArra = this.UndefinedResultEntry;
-        this.krilTsutsaroth = this.UndefinedResultEntry;
-        this.mimic = this.UndefinedResultEntry;
-        this.nex = this.UndefinedResultEntry;
-        this.nightmare = this.UndefinedResultEntry;
-        this.phosanisNightmare = this.UndefinedResultEntry;
-        this.obor = this.UndefinedResultEntry;
-        this.sarachnis = this.UndefinedResultEntry;
-        this.scorpia = this.UndefinedResultEntry;
-        this.skotizo = this.UndefinedResultEntry;
-        this.tempoross = this.UndefinedResultEntry;
-        this.theGauntlet = this.UndefinedResultEntry;
-        this.theCorruptedGauntlet = this.UndefinedResultEntry;
-        this.theatreOfBlood = this.UndefinedResultEntry;
-        this.theatreOfBloodHard = this.UndefinedResultEntry;
-        this.thermonuclearSmokeDevil = this.UndefinedResultEntry;
-        this.tzkalZuk = this.UndefinedResultEntry;
-        this.tztokJad = this.UndefinedResultEntry;
-        this.venenatis = this.UndefinedResultEntry;
-        this.vetion = this.UndefinedResultEntry;
-        this.vorkath = this.UndefinedResultEntry;
-        this.wintertodt = this.UndefinedResultEntry;
-        this.zalcano = this.UndefinedResultEntry;
-        this.zulrah = this.UndefinedResultEntry;
+        this.overall = UndefinedResultEntry;
+        this.attack = UndefinedResultEntry;
+        this.defence = UndefinedResultEntry;
+        this.strength = UndefinedResultEntry;
+        this.hitpoints = UndefinedResultEntry;
+        this.ranged = UndefinedResultEntry;
+        this.prayer = UndefinedResultEntry;
+        this.magic = UndefinedResultEntry;
+        this.cooking = UndefinedResultEntry;
+        this.woodcutting = UndefinedResultEntry;
+        this.fletching = UndefinedResultEntry;
+        this.fishing = UndefinedResultEntry;
+        this.firemaking = UndefinedResultEntry;
+        this.crafting = UndefinedResultEntry;
+        this.smithing = UndefinedResultEntry;
+        this.mining = UndefinedResultEntry;
+        this.herblore = UndefinedResultEntry;
+        this.agility = UndefinedResultEntry;
+        this.thieving = UndefinedResultEntry;
+        this.slayer = UndefinedResultEntry;
+        this.farming = UndefinedResultEntry;
+        this.runecraft = UndefinedResultEntry;
+        this.hunter = UndefinedResultEntry;
+        this.construction = UndefinedResultEntry;
+        this.leaguePoints = UndefinedResultEntry;
+        this.bountyHunterHunter = UndefinedResultEntry;
+        this.bountyHunterRogue = UndefinedResultEntry;
+        this.clueScrollAll = UndefinedResultEntry;
+        this.clueScrollBeginner = UndefinedResultEntry;
+        this.clueScrollEasy = UndefinedResultEntry;
+        this.clueScrollMedium = UndefinedResultEntry;
+        this.clueScrollHard = UndefinedResultEntry;
+        this.clueScrollElite = UndefinedResultEntry;
+        this.clueScrollMaster = UndefinedResultEntry;
+        this.lastManStanding = UndefinedResultEntry;
+        this.soulWarsZeal = UndefinedResultEntry;
+        this.abyssalSire = UndefinedResultEntry;
+        this.alchemicalHydra = UndefinedResultEntry;
+        this.barrowsBrothers = UndefinedResultEntry;
+        this.bryophyta = UndefinedResultEntry;
+        this.callisto = UndefinedResultEntry;
+        this.cerberus = UndefinedResultEntry;
+        this.chambersOfXeric = UndefinedResultEntry;
+        this.chambersOfXericChallengeMode = UndefinedResultEntry;
+        this.chaosElemental = UndefinedResultEntry;
+        this.chaosFanatic = UndefinedResultEntry;
+        this.commanderZilyana = UndefinedResultEntry;
+        this.corporealBeast = UndefinedResultEntry;
+        this.crazyArchaeologist = UndefinedResultEntry;
+        this.dagannothPrime = UndefinedResultEntry;
+        this.dagannothRex = UndefinedResultEntry;
+        this.dagannothSupreme = UndefinedResultEntry;
+        this.derangedArchaeologist = UndefinedResultEntry;
+        this.generalGraardor = UndefinedResultEntry;
+        this.giantMole = UndefinedResultEntry;
+        this.grotesqueGuardians = UndefinedResultEntry;
+        this.hespori = UndefinedResultEntry;
+        this.kalphiteQueen = UndefinedResultEntry;
+        this.kingBlackDragon = UndefinedResultEntry;
+        this.kraken = UndefinedResultEntry;
+        this.kreeArra = UndefinedResultEntry;
+        this.krilTsutsaroth = UndefinedResultEntry;
+        this.mimic = UndefinedResultEntry;
+        this.nex = UndefinedResultEntry;
+        this.nightmare = UndefinedResultEntry;
+        this.phosanisNightmare = UndefinedResultEntry;
+        this.obor = UndefinedResultEntry;
+        this.sarachnis = UndefinedResultEntry;
+        this.scorpia = UndefinedResultEntry;
+        this.skotizo = UndefinedResultEntry;
+        this.tempoross = UndefinedResultEntry;
+        this.theGauntlet = UndefinedResultEntry;
+        this.theCorruptedGauntlet = UndefinedResultEntry;
+        this.theatreOfBlood = UndefinedResultEntry;
+        this.theatreOfBloodHard = UndefinedResultEntry;
+        this.thermonuclearSmokeDevil = UndefinedResultEntry;
+        this.tzkalZuk = UndefinedResultEntry;
+        this.tztokJad = UndefinedResultEntry;
+        this.venenatis = UndefinedResultEntry;
+        this.vetion = UndefinedResultEntry;
+        this.vorkath = UndefinedResultEntry;
+        this.wintertodt = UndefinedResultEntry;
+        this.zalcano = UndefinedResultEntry;
+        this.zulrah = UndefinedResultEntry;
+        this.gamemode = HiscoreEndpointType.Normal
     }
 
+    /**
+     * Getter gamemode
+     * @return {HiscoreEndpointType}
+     */
+	public getGamemode(): HiscoreEndpointType {
+		return this.gamemode;
+	}
+
+    /**
+     * Setter gamemode
+     * @param {HiscoreEndpointType} value
+     */
+	public setGamemode(value: HiscoreEndpointType) {
+		this.gamemode = value;
+	}
 
     /**
      * Getter playerName

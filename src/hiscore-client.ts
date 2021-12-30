@@ -19,20 +19,20 @@ export class HiscoreClient {
         const endpointUrl = HiscoreClient.GetEndpointUrl(endpointType);
         const url = endpointUrl + "?player=" + playerName;
         const response = axios(url).then((res: AxiosResponse) => res);
-        return await HiscoreClient.ProcessResponse(playerName, await response);
+        return await HiscoreClient.ProcessResponse(playerName, await response, endpointType);
     }
 
     // processResponse(playerName, response) : HiscoreResult
     // if not status 200
     // throw error with response.statusText
     // return parse response
-    private static async ProcessResponse(playerName: string, response: AxiosResponse): Promise<HiscoreResult> {
+    private static async ProcessResponse(playerName: string, response: AxiosResponse, endpointType: HiscoreEndpointType): Promise<HiscoreResult> {
         if (!(response.status === 200)) {
             console.log(response)
             throw new Error(response.statusText);
         }
         const responseText = await response.data;
-        return HiscoreClient.ParseResponse(playerName, responseText);
+        return HiscoreClient.ParseResponse(playerName, responseText, endpointType);
     }
        
     // ParseResponse(playerName, response) : HiscoreResult:
@@ -45,7 +45,7 @@ export class HiscoreClient {
     // create new HiscoreEntry with rank, level, xp
     // add HiscoreEntry to HiscoreResultBuilder
     // return HiscoreResultBuilder.Build()
-    private static ParseResponse(playerName: string, response: string): HiscoreResult {
+    private static ParseResponse(playerName: string, response: string, endpointType: HiscoreEndpointType): HiscoreResult {
         const builder = new HiscoreResultBuilder(playerName);
         let count = 0;
         response
@@ -65,10 +65,13 @@ export class HiscoreClient {
                 builder.addEntry(entry);
                 count++;
             });
-        return builder.build();
+
+        let result = builder.build();
+        result.setGamemode(endpointType);
+        return result;
     }
 
-    public static GetEndpointUrl(endpointType: HiscoreEndpointType): string {
+    private static GetEndpointUrl(endpointType: HiscoreEndpointType): string {
         return HiscoreEndpointUrlMap[endpointType];
     }
 }

@@ -1,20 +1,38 @@
 {
   "dependencies": {
-    "@testdeck/mocha": "^0.2.0",
     "axios": "^0.24.0",
-    "chai": "^4.3.4",
-    "csv-parser": "^3.0.0",
-    "mocha": "^9.1.3",
-    "nyc": "^15.1.0",
-    "ts-mockito": "^2.6.1",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0"
   },
   "devDependencies": {
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "@testdeck/mocha": "^0.2.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "nyc": "^15.1.0",
+    "ts-mockito": "^2.6.1"
   },
   "scripts": {
     "test": "nyc ./node_modules/.bin/_mocha 'tests/**/*.test.ts'",
-    "clean": "rm -rf ./coverage ./build"
-  }
+    "clean": "rm -rf ./coverage ./build",
+    "prebuildpkg": "npm run clean && tsc && rm -rf ./build/*.map && cp ./package.json ./build/package.json"
+  },
+  "name": "osrshiscore-api",
+  "description": "",
+  "version": "1.0.0",
+  "main": "build/hiscore-client.js",
+  "types": "build/hiscore-client.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willnotcy/osrshiscore-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willnotcy/osrshiscore-api/issues"
+  },
+  "homepage": "https://github.com/willnotcy/osrshiscore-api#readme"
 }
