@@ -16,7 +16,7 @@
   "scripts": {
     "test": "nyc ./node_modules/.bin/_mocha 'tests/**/*.test.ts'",
     "clean": "rm -rf ./coverage ./build",
-    "prebuildpkg": "npm run clean && tsc && rm -rf ./build/*.map && cp ./package.json ./build/package.json"
+    "prebuildpkg": "npm run clean && tsc && rm -rf ./build/*.map &&  rm -rf ./build/test.* && cp ./package.json ./build/package.json"
   },
   "name": "osrshiscore-api",
   "description": "",

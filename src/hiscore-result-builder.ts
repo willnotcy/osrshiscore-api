@@ -93,6 +93,7 @@ export class HiscoreResultBuilder {
         result.setClueScrollMaster(this._entries[count++]);
         result.setLastManStanding(this._entries[count++]);
         result.setSoulWarsZeal(this._entries[count++]);
+        result.setGuardiansOfTheRift(this._entries[count++]);
 
         result.setAbyssalSire(this._entries[count++]);
         result.setAlchemicalHydra(this._entries[count++]);

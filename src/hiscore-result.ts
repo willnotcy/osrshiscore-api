@@ -126,6 +126,7 @@ export class HiscoreResult {
     private clueScrollMaster: ResultEntry;
     private lastManStanding: ResultEntry;
     private soulWarsZeal: ResultEntry;
+    private guardiansOfTheRift: ResultEntry;
     private abyssalSire: ResultEntry;
     private alchemicalHydra: ResultEntry;
     private barrowsBrothers: ResultEntry;
@@ -213,6 +214,7 @@ export class HiscoreResult {
         this.clueScrollMaster = UndefinedResultEntry;
         this.lastManStanding = UndefinedResultEntry;
         this.soulWarsZeal = UndefinedResultEntry;
+        this.guardiansOfTheRift = UndefinedResultEntry;
         this.abyssalSire = UndefinedResultEntry;
         this.alchemicalHydra = UndefinedResultEntry;
         this.barrowsBrothers = UndefinedResultEntry;
@@ -575,6 +577,14 @@ export class HiscoreResult {
 	public getSoulWarsZeal(): ResultEntry {
 		return this.soulWarsZeal;
 	}
+
+    /**
+     * Getter guardiansOfTheRift
+     * @returns {ResultEntry}
+     */
+    public getGuardiansOfTheRift(): ResultEntry {
+        return this.guardiansOfTheRift;
+    }
 
     /**
      * Getter abyssalSire
@@ -1254,6 +1264,14 @@ export class HiscoreResult {
      */
 	public setSoulWarsZeal(value: ResultEntry) {
 		this.soulWarsZeal = value;
+	}
+
+        /**
+     * Setter guardiansOfTheRift
+     * @param {ResultEntry} value
+     */
+	public setGuardiansOfTheRift(value: ResultEntry) {
+		this.guardiansOfTheRift = value;
 	}
 
     /**
