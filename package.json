@@ -20,7 +20,7 @@
   },
   "name": "osrshiscore-api",
   "description": "",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "build/hiscore-client.js",
   "types": "build/hiscore-client.d.ts",
   "directories": {
