@@ -92,6 +92,7 @@ export class HiscoreResultBuilder {
         result.setClueScrollElite(this._entries[count++]);
         result.setClueScrollMaster(this._entries[count++]);
         result.setLastManStanding(this._entries[count++]);
+        result.setPvpArena(this._entries[count++]);
         result.setSoulWarsZeal(this._entries[count++]);
         result.setGuardiansOfTheRift(this._entries[count++]);
 
@@ -122,11 +123,7 @@ export class HiscoreResultBuilder {
         result.setKreeArra(this._entries[count++]);
         result.setKrilTsutsaroth(this._entries[count++]);
         result.setMimic(this._entries[count++]);
-
-        if(this._entries.length > 84) { // TODO: remove check post Nex release
-            result.setNex(this._entries[count++]);
-        }
-
+        result.setNex(this._entries[count++]);
         result.setNightmare(this._entries[count++]);
         result.setPhosanisNightmare(this._entries[count++]);
         result.setObor(this._entries[count++]);

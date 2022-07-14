@@ -42,6 +42,7 @@ export const HiscoreEntryTypeMap = {
     'Clue Scroll (Elite)': HiscoreEntryType.Minigame,
     'Clue Scroll (Master)': HiscoreEntryType.Minigame,
     'Last Man Standing': HiscoreEntryType.Minigame,
+    'PvP Arena': HiscoreEntryType.Minigame,
     'Soul Wars Zeal': HiscoreEntryType.Minigame,
     'Guardians of the Rift': HiscoreEntryType.Minigame,
     'Abyssal Sire': HiscoreEntryType.Boss,

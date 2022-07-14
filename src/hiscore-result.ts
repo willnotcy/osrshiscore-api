@@ -126,6 +126,7 @@ export class HiscoreResult {
     private clueScrollMaster: ResultEntry;
     private lastManStanding: ResultEntry;
     private soulWarsZeal: ResultEntry;
+    private pvpArena: ResultEntry;
     private guardiansOfTheRift: ResultEntry;
     private abyssalSire: ResultEntry;
     private alchemicalHydra: ResultEntry;
@@ -213,6 +214,7 @@ export class HiscoreResult {
         this.clueScrollElite = UndefinedResultEntry;
         this.clueScrollMaster = UndefinedResultEntry;
         this.lastManStanding = UndefinedResultEntry;
+        this.pvpArena = UndefinedResultEntry
         this.soulWarsZeal = UndefinedResultEntry;
         this.guardiansOfTheRift = UndefinedResultEntry;
         this.abyssalSire = UndefinedResultEntry;
@@ -568,6 +570,14 @@ export class HiscoreResult {
      */
 	public getLastManStanding(): ResultEntry {
 		return this.lastManStanding;
+	}
+
+    /**
+     * Getter pvpArena
+     * @return {ResultEntry}
+     */
+	public getPvpArena(): ResultEntry {
+		return this.pvpArena;
 	}
 
     /**
@@ -1256,6 +1266,14 @@ export class HiscoreResult {
      */
 	public setLastManStanding(value: ResultEntry) {
 		this.lastManStanding = value;
+	}
+
+    /**
+     * Setter pvpArena
+     * @param {ResultEntry} value
+     */
+	public setPvpArena(value: ResultEntry) {
+		this.pvpArena = value;
 	}
 
     /**
