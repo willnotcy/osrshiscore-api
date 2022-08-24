@@ -168,6 +168,8 @@ export class HiscoreResult {
     private theatreOfBlood: ResultEntry;
     private theatreOfBloodHard: ResultEntry;
     private thermonuclearSmokeDevil: ResultEntry;
+    private tombsOfAmascut: ResultEntry;
+    private tombsOfAmascutExpert: ResultEntry;
     private tzkalZuk: ResultEntry;
     private tztokJad: ResultEntry;
     private venenatis: ResultEntry;
@@ -257,6 +259,8 @@ export class HiscoreResult {
         this.theatreOfBlood = UndefinedResultEntry;
         this.theatreOfBloodHard = UndefinedResultEntry;
         this.thermonuclearSmokeDevil = UndefinedResultEntry;
+        this.tombsOfAmascut = UndefinedResultEntry;
+        this.tombsOfAmascutExpert = UndefinedResultEntry;
         this.tzkalZuk = UndefinedResultEntry;
         this.tztokJad = UndefinedResultEntry;
         this.venenatis = UndefinedResultEntry;
@@ -914,6 +918,22 @@ export class HiscoreResult {
      */
 	public getThermonuclearSmokeDevil(): ResultEntry {
 		return this.thermonuclearSmokeDevil;
+	}
+
+    /**
+     * Getter tombsOfAmascut
+     * @return {ResultEntry}
+     */
+	public getTombsOfAmascut(): ResultEntry {
+		
+        return this.tombsOfAmascut;
+	}
+    /**
+     * Getter tombsOfAmascutExpert
+     * @return {ResultEntry}
+     */
+	public getTombsOfAmascutExpert(): ResultEntry {
+		return this.tombsOfAmascutExpert;
 	}
 
     /**
@@ -1611,6 +1631,24 @@ export class HiscoreResult {
 	public setThermonuclearSmokeDevil(value: ResultEntry) {
 		this.thermonuclearSmokeDevil = value;
 	}
+
+        /**
+     * Setter tombsOfAmascut
+     * @param {ResultEntry} value
+     */
+	public setTombsOfAmascut(value: ResultEntry) {
+		this.tombsOfAmascut = value;
+	}
+
+
+        /**
+     * Setter tombsOfAmascutExpert
+     * @param {ResultEntry} value
+     */
+	public setTombsOfAmascutExpert(value: ResultEntry) {
+		this.tombsOfAmascutExpert = value;
+	}
+
 
     /**
      * Setter tzkalZuk

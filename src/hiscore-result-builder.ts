@@ -136,6 +136,8 @@ export class HiscoreResultBuilder {
         result.setTheatreOfBlood(this._entries[count++]);
         result.setTheatreOfBloodHard(this._entries[count++]);
         result.setThermonuclearSmokeDevil(this._entries[count++]);
+        result.setTombsOfAmascut(this._entries[count++]);
+        result.setTombsOfAmascutExpert(this._entries[count++]);
         result.setTzkalZuk(this._entries[count++]);
         result.setTztokJad(this._entries[count++]);
         result.setVenenatis(this._entries[count++]);

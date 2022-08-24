@@ -85,6 +85,8 @@ export const HiscoreEntryTypeMap = {
     'Theatre of Blood': HiscoreEntryType.Boss,
     'Theatre of Blood (Hard Mode)': HiscoreEntryType.Boss,
     'Thermonuclear Smoke Devil': HiscoreEntryType.Boss,
+    'Tombs of Amascut': HiscoreEntryType.Boss,
+    'Tombs of Amascut (Expert Mode)': HiscoreEntryType.Boss,
     'Tzkal-Zuk': HiscoreEntryType.Boss,
     'Tztok-Jad': HiscoreEntryType.Boss,
     'Venenatis': HiscoreEntryType.Boss,

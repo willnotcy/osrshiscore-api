@@ -5,4 +5,5 @@ export enum HiscoreEntryType {
     Boss = 2,
     Overall = 3,
     Activity = 4,
+    Unknown = 5,
 }
