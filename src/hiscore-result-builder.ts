@@ -127,6 +127,7 @@ export class HiscoreResultBuilder {
         result.setNightmare(this._entries[count++]);
         result.setPhosanisNightmare(this._entries[count++]);
         result.setObor(this._entries[count++]);
+        result.setPhantomMuspah(this._entries[count++]);
         result.setSarachnis(this._entries[count++]);
         result.setScorpia(this._entries[count++]);
         result.setSkotizo(this._entries[count++]);

@@ -159,6 +159,7 @@ export class HiscoreResult {
     private nightmare: ResultEntry;
     private phosanisNightmare: ResultEntry;
     private obor: ResultEntry;
+    private phantomMuspah: ResultEntry;
     private sarachnis: ResultEntry;
     private scorpia: ResultEntry;
     private skotizo: ResultEntry;
@@ -250,6 +251,7 @@ export class HiscoreResult {
         this.nightmare = UndefinedResultEntry;
         this.phosanisNightmare = UndefinedResultEntry;
         this.obor = UndefinedResultEntry;
+        this.phantomMuspah = UndefinedResultEntry;
         this.sarachnis = UndefinedResultEntry;
         this.scorpia = UndefinedResultEntry;
         this.skotizo = UndefinedResultEntry;
@@ -846,6 +848,14 @@ export class HiscoreResult {
      */
 	public getObor(): ResultEntry {
 		return this.obor;
+	}
+
+    /**
+     * Getter phantomMuspah
+     * @return {ResultEntry}
+     */
+     public getPhantomMuspah(): ResultEntry {
+		return this.phantomMuspah;
 	}
 
     /**
@@ -1559,6 +1569,15 @@ export class HiscoreResult {
 	public setObor(value: ResultEntry) {
 		this.obor = value;
 	}
+
+    /**
+     * Setter phantomMuspah
+     * @param {ResultEntry} value
+     */
+	public setPhantomMuspah(value: ResultEntry) {
+		this.phantomMuspah = value;
+	}
+
 
     /**
      * Setter sarachnis

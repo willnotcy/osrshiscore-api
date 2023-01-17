@@ -76,6 +76,7 @@ export const HiscoreEntryTypeMap = {
     'Nightmare': HiscoreEntryType.Boss,
     'Phosanis Nightmare': HiscoreEntryType.Boss,
     'Obor': HiscoreEntryType.Boss,
+    'Phantom Muspah': HiscoreEntryType.Boss,
     'Sarachnis': HiscoreEntryType.Boss,
     'Scorpia': HiscoreEntryType.Boss,
     'Skotizo': HiscoreEntryType.Boss,
